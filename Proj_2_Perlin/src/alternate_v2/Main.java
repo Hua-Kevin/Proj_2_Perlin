@@ -11,8 +11,8 @@ import javax.swing.JPanel;
 
 
 public class Main extends JFrame {
-	public static int WIDTH = 64 * 10;
-	public static int HEIGHT = 48 * 10;
+	public static int WIDTH = 640;
+	public static int HEIGHT = 480;
 	public static long seed = System.currentTimeMillis();
 
     public static void main(String[] args) {
@@ -29,19 +29,15 @@ public class Main extends JFrame {
 			seed = Long.parseLong(args[2]);
 		}
 
-		//Random rand = new Random(seed);
-		//double z = rand.nextDouble();
 		
 		MainPanel panel = new MainPanel();
 
 		JFrame window = new JFrame();
 		window.add(panel);
-		//window.setSize(width * 10, height * 10);
-		window.setSize(width, height);
+ 		window.setSize(width, height);
+ 		window.setTitle("Current Seed: " + seed);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//window.getContentPane().add(new Map(height, width, z));
 		window.setVisible(true);
-		window.setTitle("Seed: " + seed);
 	}
     
     public static class MainPanel extends JPanel {
