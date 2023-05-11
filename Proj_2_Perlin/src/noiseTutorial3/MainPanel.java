@@ -1,4 +1,4 @@
-package noiseTutorial;
+package noiseTutorial3;
 
 import java.awt.Graphics;
 import java.util.*;
@@ -14,6 +14,6 @@ public class MainPanel extends JPanel {
 
     protected void paintComponent(Graphics g) {
     	super.paintComponent(g);
-    	g.drawImage(RandomNoise.getNoiseImage(), 0,0, this);
+    	g.drawImage(PerlinNoise3D.getNoiseImage(), 0,0, this);
     }
 }
