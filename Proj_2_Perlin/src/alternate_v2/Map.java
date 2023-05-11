@@ -59,17 +59,22 @@ public class Map extends JPanel {
 				
 				//System.out.println(noise);
 				
-				int color;
+				int color = 0;
 		        if (noise < 0.4) {
 		            color = Color.blue.getRGB();
 		        } else if (noise >= 0.4 && noise < 0.7) {
 		            color = Color.green.getRGB();
-		        } else if (noise >= 0.7 && noise < 0.8) {
+		        } else if (noise >= 0.7) {
+		        	Color brown = new Color(102,51,0);
+		        	color = brown.getRGB();
+		        }
+		        
+		        /* else if (noise >= 0.7 && noise < 0.8) {
 		        	Color brown = new Color(102,51,0);
 		        	color = brown.getRGB();
 		        } else {
 		        	color = Color.white.getRGB();
-		        }
+		        }*/
 				
 		        //image.setRGB(x * 10, y * 10, color);
 		        
@@ -79,6 +84,8 @@ public class Map extends JPanel {
 		            	int newY = (y * 10) + l;
 		            	//System.out.println("X: " + x + ", Y: "+ y +", XK: " + newX + ", YL: " + newY);
 		                image.setRGB(newX, newY, color);
+		                
+		                //hmmm now to change the map if there's only like 1 pixel
 		            }
 		        }
 			}
